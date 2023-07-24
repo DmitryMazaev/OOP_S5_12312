@@ -3,7 +3,6 @@ package View;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
-
 import Controller.iGetView;
 import Model.Student;
 
@@ -25,17 +24,4 @@ public class View implements iGetView{
         System.out.println(msg);
         return in.nextLine();
     }
-
-    @Override
-    public void printAllHashMapStudents(HashMap<Long, Student> hashMapStudents) {
-        System.out.println("------список студентов--------");
-        for(Student stud: hashMapStudents.values())
-        {
-            System.out.println(stud);
-        }
-        System.out.println("===============================");
-    }
-
-
-
 }

@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.swing.text.View;
+
 import Controller.iGetModel;
+import Controller.iGetView;
 
 public class ModelFile implements iGetModel{
     private String fileName;
-    
+    private iGetView view;
 
     public ModelFile(String fileName) {
         this.fileName = fileName;

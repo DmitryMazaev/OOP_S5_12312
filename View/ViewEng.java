@@ -24,15 +24,4 @@ public class ViewEng implements iGetView{
         System.out.println(msg);
         return in.nextLine();
     }
-
-    @Override
-    public void printAllHashMapStudents(HashMap<Long, Student> hashMapStudents) {
-        System.out.println("------Stedents list--------");
-        for(Student stud: hashMapStudents.values())
-        {
-            System.out.println(stud.toStringEng());
-        }
-        System.out.println("===============================");
-    }
-    
 }

@@ -38,15 +38,6 @@ public class App {
         Student s11 = new Student("Зинаида", "Zinaida", 19, 720);
         Student s12 = new Student("Альбина", "Albina", 21, 721);
 
-        long l7 = 7617;
-        long l8 = 7618;
-        long l9 = 7619;
-        long l10 = 7620;
-        long l11 = 7621;
-        long l12 = 7622;
-
-
-
         List<Student> hashMapStudent = new ArrayList<Student>();
         hashMapStudent.add(s7);
         hashMapStudent.add(s8);
@@ -62,7 +53,7 @@ public class App {
         // controller.update();
 
         ModelFile fModel = new ModelFile("StudentDB.txt");
-        fModel.saveAllStudentToFile(students);
+        fModel.saveAllStudentToFile(hashMapStudent);
 
         iGetModel modelFile = fModel;
         iGetModel model = new ModelList(students);
@@ -78,11 +69,13 @@ public class App {
             if (a == 1) {
                 Controller control = new Controller(hashModel, view);
                 control.run();
+                fModel.saveAllStudentToFile(hashMapStudent);
             }
 
             if (a == 2) {
                 Controller control = new Controller(modelFile, viewEng);
                 control.run();
+                fModel.saveAllStudentToFile(students);
             }
         }
         // Controller control = new Controller(modelFile, view);
@@ -95,7 +88,6 @@ public class App {
 
         //iGetModel hashModel = new HashModel(hashMapStudent);
         //Controller hashController = new Controller(hashModel, view);
-
 
     }
 }

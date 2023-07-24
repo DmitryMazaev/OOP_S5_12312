@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import Model.ModelFile;
 import Model.ModelList;
 import Model.Student;
 import View.View;
@@ -20,7 +21,6 @@ public class Controller {
         this.model = model;
         this.view = view;
     }
-
 
     private boolean testData(List<Student> students, HashMap<Long,Student> hashMapStudents)
     {
@@ -73,21 +73,7 @@ public class Controller {
 
                         model.removeStudent(a);
                         view.printAllStudents(model.getAllStudents());
-                        break;
-                        /* int count = 0;
-                        for (Student student : students) {
-                            if (student.getId() == a)
-                            {
-                                System.out.println(student + " удален");
-                                students.remove(count);
-                            }
-                            else
-                            {
-                                System.out.println(student.getId());
-                            }
-                            count +=1;
-                            } */
-                            
+                        break;                         
                 }
 
             }
@@ -109,6 +95,14 @@ public class Controller {
                     case LIST:
                         view.printAllStudents(model.getAllStudents());
                         break;
+                    case DELETE:
+                        System.out.println("Enter the student ID number of the student:");
+                        Scanner in = new Scanner(System.in);
+                        int a = in.nextInt();
+
+                        model.removeStudent(a);
+                        view.printAllStudents(model.getAllStudents());
+                        break;   
                 }
 
             }
